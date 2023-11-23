@@ -1,0 +1,22 @@
+server:
+  port: 8080
+
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          keycloak:
+            client-id: myclient
+            client-secret: rL19bavhE35f0ltWz5FJygR4El82SwQR
+            scope: openid, profile
+            authorization-grant-type: authorization_code
+        provider:
+          keycloak:
+            issuer-uri: http://localhost:8180/auth/realms/myrealm
+            user-name-attribute: preferred_username
+keycloak:
+  server-url: http://localhost:8180/auth
+  realm: myrealm
+  username: admin
+  password: adminpass
